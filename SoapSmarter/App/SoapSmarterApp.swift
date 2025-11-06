@@ -4,7 +4,7 @@ import SwiftUI
 struct SoapSmarterApp: App {
     var body: some Scene {
         WindowGroup {
-            ExperimentView()
+            MainTabView()
         }
     }
 }

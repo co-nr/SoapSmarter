@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         Text("Settings")
-            .font(.title)
+            .font(.title2)
     }
 }
 
