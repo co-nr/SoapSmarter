@@ -9,10 +9,10 @@ enum ColorSchemeOption: String, CaseIterable {
 @Observable
 final class ThemeManager {
     
-    @AppStorage("selectedTheme")  @ObservationIgnored private  var storedTheme: String = "MainTheme"
+    @AppStorage("selectedTheme")  @ObservationIgnored private  var storedTheme: String = "DefaultTheme"
     @AppStorage("colorSchemeOption")  @ObservationIgnored private  var storedColorScheme: String = "system"
     
-    var selectedTheme: ThemeProtocol = MainTheme() {
+    var selectedTheme: ThemeProtocol = DefaultTheme() {
         didSet {
             storedTheme = themeIdentifier(for: selectedTheme)
         }
@@ -58,8 +58,7 @@ final class ThemeManager {
     
     private func themeIdentifier(for theme: ThemeProtocol) -> String {
         switch theme {
-        case is MainTheme: return "MainTheme"
-        case is BlackWhiteTheme: return "BlackWhiteTheme"
+        case is DefaultTheme: return "DefaultTheme"
         case is DesertTheme: return "DesertTheme"
         case is OceanTheme: return "OceanTheme"
         case is ForestTheme: return "ForestTheme"
@@ -70,12 +69,11 @@ final class ThemeManager {
     
     private func themeForIdentifier(_ identifier: String) -> ThemeProtocol {
         switch identifier {
-        case "MainTheme": return MainTheme()
-        case "BlackWhiteTheme": return BlackWhiteTheme()
+        case "DefaultTheme": return DefaultTheme()
         case "DesertTheme": return DesertTheme()
         case "OceanTheme": return OceanTheme()
         case "DreamTheme": return DreamTheme()
-        default: return MainTheme()
+        default: return DefaultTheme()
         }
     }
 }

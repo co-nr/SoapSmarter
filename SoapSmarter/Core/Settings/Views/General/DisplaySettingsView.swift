@@ -8,12 +8,11 @@ struct DisplaySettingsView: View {
         NavigationStack {
             List {
                 Section("Themes") {
-                    ThemeSelectionButton(themeType: MainTheme(), label: "Classic")
+                    ThemeSelectionButton(themeType: DefaultTheme(), label: "Default")
                     ThemeSelectionButton(themeType: DesertTheme(), label: "Desert")
                     ThemeSelectionButton(themeType: OceanTheme(), label: "Ocean")
                     ThemeSelectionButton(themeType: ForestTheme(), label: "Forest")
                     ThemeSelectionButton(themeType: DreamTheme(), label: "Dream")
-                    ThemeSelectionButton(themeType: BlackWhiteTheme(), label: "Black & White")
                 }
                 .listRowBackground(theme.secondaryBackgroundColor)
             }
