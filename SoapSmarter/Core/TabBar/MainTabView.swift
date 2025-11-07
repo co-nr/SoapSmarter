@@ -31,5 +31,7 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    PreviewWrapper {
+        MainTabView()
+    }
 }
